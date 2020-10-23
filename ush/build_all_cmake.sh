@@ -21,8 +21,8 @@ elif [[ -d /ioddev_dell ]]; then
 elif [[ -d /scratch1 ]] ; then
     . /apps/lmod/lmod/init/sh
     target=hera
-elif [[ -d /carddata ]] ; then
-    . /opt/apps/lmod/3.1.9/init/sh
+elif [[ -d /data/prod ]] ; then
+    . /usr/share/lmod/lmod/init/sh
     target=s4
 elif [[ -d /jetmon ]] ; then
     . $MODULESHOME/init/sh
