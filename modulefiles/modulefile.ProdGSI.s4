@@ -18,7 +18,6 @@ set C_COMP_MP mpcc
 module load license_intel
 module load intel/18.0.3
 module load emc-hpc-stack/2020-q3
-module load hdf/4.2.14
 module load miniconda/2.7-base
 
 # Loading nceplibs modules
