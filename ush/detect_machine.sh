@@ -28,6 +28,8 @@ case $(hostname -f) in
   hfe1[0-2]) MACHINE_ID=hera ;; ### hera10-12
   hecflow01) MACHINE_ID=hera ;; ### heraecflow01
 
+  slurm-noaa-fv3-login0.c.noaa-leap-gfs-sandbox.internal) MACHINE_ID=gcp ;; ### gcp
+
   s4-submit.ssec.wisc.edu) MACHINE_ID=s4 ;; ### s4
 
   fe[1-8]) MACHINE_ID=jet ;; ### jet01-8

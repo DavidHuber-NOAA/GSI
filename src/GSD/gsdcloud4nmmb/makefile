@@ -4,7 +4,7 @@ LIB = ./libgsdcloud.a
 
 include make.filelist
 
-FFLAGS = -O3 -g -fp-model strict -convert big_endian -assume byterecl -implicitnone -traceback #   -I../../../include 
+FFLAGS = -O2 -g -fp-model strict -convert big_endian -assume byterecl -implicitnone -traceback #   -I../../../include 
 .SUFFIXES: .f90 .o
 
 .f90.o:

@@ -8,7 +8,7 @@ set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -g -traceback -assume byterecl -
 # RELEASE FLAGS
 ####################################################################
 
-set(CMAKE_Fortran_FLAGS_RELEASE "-O3 -fp-model strict")
+set(CMAKE_Fortran_FLAGS_RELEASE "-O2 -fp-model source")
 
 ####################################################################
 # DEBUG FLAGS
