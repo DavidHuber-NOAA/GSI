@@ -5,7 +5,6 @@ Load common modules to build GSI on all machines
 local netcdf_c_ver=os.getenv("netcdf_c_ver") or "4.9.2"
 local netcdf_fortran_ver=os.getenv("netcdf_fortran_ver") or "4.6.1"
 
-local bufr_ver=os.getenv("bufr_ver") or "11.7.0"
 local bacio_ver=os.getenv("bacio_ver") or "2.4.1"
 local w3emc_ver=os.getenv("w3emc_ver") or "2.10.0"
 local sp_ver=os.getenv("sp_ver") or "2.5.0"
@@ -21,7 +20,21 @@ local ncdiag_ver=os.getenv("ncdiag_ver") or "1.1.2"
 load(pathJoin("netcdf-c", netcdf_c_ver))
 load(pathJoin("netcdf-fortran", netcdf_fortran_ver))
 
-load(pathJoin("bufr", bufr_ver))
+prepend_path("PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/bin", ":")
+prepend_path("LD_LIBRARY_PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64", ":")
+prepend_path("DYLD_LIBRARY_PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64", ":")
+prepend_path("CPATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/include", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/.", ":")
+prepend_path("PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/bin", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/.", ":")
+prepend_path("PYTHONPATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib/python3.11/site-packages", ":")
+setenv("BUFR_LIB4", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64/libbufr_4.a")
+setenv("BUFR_INC4", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/include/bufr_4")
+prepend_path("PYTHONPATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64/python3.11/site-packages", ":")
+prepend_path("PYTHONPATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64/python3.11/site-packages", ":")
+prepend_path("PYTHONPATH", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install/lib64/python3.11/site-packages", ":")
+setenv("bufr_ROOT", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install")
+setenv("BUFR_ROOT", "/work/noaa/global/dhuber/LIBS/bufr_12.1.0_hercules_keep/install")
 load(pathJoin("bacio", bacio_ver))
 load(pathJoin("w3emc", w3emc_ver))
 load(pathJoin("sp", sp_ver))
