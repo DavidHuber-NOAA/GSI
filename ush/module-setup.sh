@@ -38,6 +38,7 @@ elif [[ $MACHINE_ID = s4* ]] ; then
 
 elif [[ $MACHINE_ID = wcoss2 ]]; then
     # We are on WCOSS2
+    export LMOD_TMOD_FIND_FIRST=yes
     module reset
 
 elif [[ $MACHINE_ID = stampede* ]] ; then
