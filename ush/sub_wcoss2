@@ -123,13 +123,16 @@ echo "" >> $cfile
 echo ". "$(awk '{ print $1, $2, $3, $4, $5, $6, $7, $8, $9 }' $regdir/regression_var.out)  >>$cfile
 echo "" >> $cfile
 
+# Ignore default modules of the same version lower in the search path (req'd by spack-stack)
+echo "set -x"                               >> $cfile
+echo "export LMOD_TMOD_FIND_FIRST=yes"      >> $cfile
 echo "module reset"                         >> $cfile
-echo "module use $modulefiles"              >> $cfile
-echo "module load gsi_${machine}.intel"     >> $cfile
 echo "module load envvar/1.0"               >> $cfile
 echo "module load cray-pals/1.2.2"          >> $cfile
-echo "module -t list 2>&1 | while read line;do module show $line 2>&1 | sed -n -e '2p';done | sort" >> $cfile
-echo "module avail" >> $cfile
+echo "module use $modulefiles"              >> $cfile
+echo "module load gsi_${machine}.intel"     >> $cfile
+#echo "module -t list 2>&1 | while read line;do module show $line 2>&1 | sed -n -e '2p';done | sort" >> $cfile
+#echo "module avail" >> $cfile
 
 echo "" >> $cfile
 
