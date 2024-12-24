@@ -18,6 +18,6 @@ load("gsi_common")
 load(pathJoin("prod_util", prod_util_ver))
 load(pathJoin("cmake", cmake_ver))
 
-pushenv("GSI_BINARY_SOURCE_DIR", "/lfs/h2/emc/global/noscrub/emc.global/FIX/fix/gsi/20240208")
+pushenv("GSI_BINARY_SOURCE_DIR", "/lfs/h2/emc/global/noscrub/emc.global/FIX/fix/gsi/20241022")
 
 whatis("Description: GSI environment on WCOSS2")
