@@ -18,6 +18,8 @@ load("gsi_common")
 load(pathJoin("prod_util", prod_util_ver))
 load(pathJoin("cmake", cmake_ver))
 
+pushenv("CRTM_FIX", "/apps/ops/prod/libs/intel/19.1.3.304/crtm/2.4.0.1/fix")
+
 pushenv("GSI_BINARY_SOURCE_DIR", "/lfs/h2/emc/global/noscrub/emc.global/FIX/fix/gsi/20241022")
 
 whatis("Description: GSI environment on WCOSS2")
