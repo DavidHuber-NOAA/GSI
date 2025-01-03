@@ -36,12 +36,12 @@ for jn in `seq ${RSTART} ${REND}`; do
       export scripts=${scripts_updat:-$scripts}
       export fixgsi=${fixgsi_updat:-$fixgsi}
       export modulefiles=${modulefiles_updat:-$modulefiles}
-      export ush=${ush_update:-$ush}
+      export ush=${ush_updat:-$ush}
    else
       export scripts=${scripts_contrl:-$scripts}
       export fixgsi=${fixgsi_contrl:-$fixgsi}
       export modulefiles=${modulefiles_contrl:-$modulefiles}
-      export ush=${ush_cntrl:-$ush}
+      export ush=${ush_contrl:-$ush}
    fi
    rm -f ${job[$jn]}.out
 
