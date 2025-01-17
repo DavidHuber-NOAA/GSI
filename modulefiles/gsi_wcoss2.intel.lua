@@ -20,6 +20,18 @@ load(pathJoin("cmake", cmake_ver))
 
 pushenv("CRTM_FIX", "/apps/ops/prod/libs/intel/19.1.3.304/crtm/2.4.0.1/fix")
 
+local CFLAGS=os.getenv("CFLAGS") or ""
+local CXXFLAGS=os.getenv("CXXFLAGS") or ""
+local FFLAGS=os.getenv("FFLAGS") or ""
+
+CFLAGS=CFLAGS:gsub("-static-libgcc -static-libstdc++ -Bstatic -lstdc++ -Bdynamic -lm -lpthread","")
+CXXFLAGS=CXXFLAGS:gsub("-static-libgcc -static-libstdc++ -Bstatic -lstdc++ -Bdynamic -lm -lpthread","")
+FFLAGS=FFLAGS:gsub("-static-libgcc -static-libstdc++ -Bstatic -lstdc++ -Bdynamic -lm -lpthread","")
+
+unsetenv("CFLAGS")
+unsetenv("CXXFLAGS")
+unsetenv("FFLAGS")
+
 pushenv("GSI_BINARY_SOURCE_DIR", "/lfs/h2/emc/global/noscrub/emc.global/FIX/fix/gsi/20241022")
 
 whatis("Description: GSI environment on WCOSS2")
